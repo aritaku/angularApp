@@ -6,7 +6,7 @@ import "rxjs/add/operator/map";
 @Injectable()
 export class HttpService {
   WEB_API_URL: string = "https://webservice.recruit.co.jp/ab-road/tour/v1/";
-  API_KEY = "";
+  API_KEY = "3f42f557fc942323";
   DEFAULT_SIZE = "30";
   SORT_RANKING = "5";
   CALLBACK = "JSONP_CALLBACK"
@@ -38,7 +38,7 @@ export class HttpService {
 
   reqData(config: RequestOptions): Observable<any> {
     return this.jsonp.request(config.url, config)
-      .map((request) => {
+      .map((response) => {
         let tourData;
         let obj = response.json();
         if (obj.result.error) {
