@@ -11,3 +11,11 @@ body {
   background-color: #dae3f3;
   font-family: sans-serif;
 }
+
+el.carousel0indicatore{
+  top: 10px !important;
+}
+
+el.caroucel-indicators li{
+  border-color: black !important;
+}

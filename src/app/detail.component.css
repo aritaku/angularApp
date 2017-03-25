@@ -1,0 +1,50 @@
+.modal-title {
+  color:black;
+  font-size: 2.3em;
+}
+
+.modal-header {
+  background-color: #d2f5ff;
+  color: black;
+  margin-right: 2em;
+}
+
+.myCaption {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+p.myLabel {
+  background-color: #fee2cc;
+  color: black;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+p {
+  padding: 0.3em;
+  font-size: 1.0em;
+  font-family: sans-serif;
+}
+
+img {
+  margin: auto;
+  width: 500px;
+}
+
+.modal-open .modal {
+  width: 500px;
+}
+
+.btn-block {
+  height: 3em;
+}
+
+.modal-header .close{
+  font-weight: bold;
+  color: black;
+  opacity: 1;
+  text-shadow: none;
+}

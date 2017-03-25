@@ -1,0 +1,69 @@
+<div bsModal  #lgModal="bs-modal" class="modal">
+  <div class="modal-dialog modal-content"
+    *ngIf="tourData?.title">
+
+    <!--ヘッダー-->
+    <div class="modal-header">
+      <!--行き先国名-->
+      <span class="modal-title">
+        {{tourData.dest?.coutry?.name}}
+      </span>
+      <!--閉じるアイコン-->
+      <button type="button" class="close"
+        (click)="lgModalhide()">
+        ×閉じる
+      </button>
+    </div>
+
+    <div class="container-field">
+      <div class="row">
+        <!--左カラム-->
+        <div class="col-xs-12 col-sm-6">
+          <!--スライド表示-->
+          <carousel [interval]="3000">
+            <slide
+              *ngFor="let slide of tourData.img; let index=index">
+              <img [src]="slide.1">
+              <div class="carousel-caption"></div>
+              <div class="myCaption">{{slide.caption}}</div>
+            </slide>
+          </carousel>
+        </div>
+
+        <!--右カラム-->
+        <div class="col-xs-12 col-sm-6">
+
+          <!--ツアー情報-->
+          <p class="myLabel">価格</p>
+          <p>{{tourData.price?.min | number}}
+            ~{{tourData.proce?.max | number}}円
+          </p>
+          <p class="myLabel">ツアー名</p>
+          <p>{{tourData.title}}</p>
+          <p class="myLabel">期間</p>
+          <p>{{tourData.term}}日間</p>
+          <p class="myLabel">訪問地</p>
+          <p>
+            <span *ngFor="let schedule of tourData.sche">
+              ({{schedule.day}}日目)
+              {{shceduke.city?.name || "帰国"}}<br>
+            </span>
+          </p>
+          <p class="myLabel">出発地/航空会社</p>
+          <p>
+            {{tourData.dept_city?.name}}<br>
+            {{tourData.airline_summary}}
+          </p>
+
+          <!--閉じるボタン-->
+          <p>
+            <button class="btn btn-block btn-default"
+              (click)="lgModal.hide()">
+              閉じる
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

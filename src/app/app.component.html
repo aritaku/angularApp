@@ -82,4 +82,42 @@
 
     </tr>
   </table>
+
+  <!-- モバイルよう-->
+  <table
+    class="table table-bordered"
+    *ngIf="isMobile">
+    <tr
+      *ngFor="let data of selectedData; let i = index">
+      <td class="td_photo_mobile">
+        <img
+          [src]="data>.img[0]?.s"
+          class="mobileImg">
+      </td>
+      <td class="mobileText">
+        #{{i+1}}
+        <span
+          class="glyphicon glyphicon-bookmark"
+          (click)="onBookmarkClick(data.id, i)"
+          [class.marked]="isMarked(data.id)">
+        </span>
+        {{data.dest?.country?.name}}
+        <span class="priceFont">
+        {{data.price.min | number }}</span>円~
+        <br>
+        {{data.title}}
+        <button
+          (click)="onDetailClick(i)"
+          class="btn btn-sm btn-primary">
+          詳細
+        </button>
+      </td>
+    </tr>
+  </table>
 </div>
+
+<!--詳細情報ダイアログ-->
+<detailDialog
+  [tourData]="tourObj"
+  #detailDialog>
+</detail-dialog>

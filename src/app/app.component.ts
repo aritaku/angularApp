@@ -3,6 +3,7 @@ import {OnInit} from "@angular/core";
 import {HttpService} from './http.service';
 import {DetailComponent} from "./detail.component";
 import {ViewContainerRef, ViewChild} from "@angular/core";
+import {HostListener} from "@angular/core";
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,8 @@ import {ViewContainerRef, ViewChild} from "@angular/core";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
+  @ViewChild("detailDialog") detailComponent: DetailComponent;
 
   tourObj;
   selectedData;
@@ -23,12 +26,26 @@ export class AppComponent implements OnInit {
     {code: "DUS", name: "アメリカ", data: null},
     {code: "BOOKMARK", name: "お気に入り", data: null},
   ];
+  viewContainerRef;
 
-  public constructor(private httpService: HttpService) { }
+  public constructor(private httpService: HttpService, viewContainerRef: ViewContainerRef) {
+    this.viewContainerRef = viewContainerRef;
+  }
+
+  onDetailClick(index) {
+    this.tourObj = this.selectedData[index];
+    this.detailComponent.openDialog();
+  }
 
   ngOnInit() {
     this.getTour();
     this.initBookmarks();
+    this.onScreenResize();
+  }
+
+  @HostListener("wondow:resize")
+  onScreenResize() {
+    this.isMobile = (innerWidth < this.MOBILE_SCREEN_WIDTH);
   }
 
   onAreaChange(index) {
