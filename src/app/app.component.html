@@ -1,3 +1,85 @@
-<h1>
-  {{title}}
-</h1>
+<div id="myHeaderBar">
+
+  <!--エリア選択ボタン-->
+  <button
+    (click)="isCollapsed = !isCollapsed"
+    id="areaButton"
+    class="btn btn-default">
+    エリア選択
+  </button>
+
+  <!--ABROADロゴ-->
+  <a href="http://webservice.recruit.co.jp">
+    <img
+      src="http://webservice.recruit.co.jp/banner/abroad-m.gif"
+      alt="エイビーロードwebサービス"
+      width="88"
+      height="35"
+      border="0"
+      title="エイビーロードwebサービス"
+      class="abloadCredit">
+  </a>
+
+  <span
+    class="myTitle"
+    *ngIf="!isMobile">
+    人気の海外旅行
+  </span>
+
+</div>
+
+<!--エリア選択メニュー-->
+<div [collapse]="isCollapsed">
+  <table
+    (click)="isCollapsed = !isCollapsed"
+    class="table table-borderd"
+    id="mySelectTable">
+    <tbody class="myTableHover">
+      <tr *ngFor="let area of areas; let i = index">
+        <td (click)="onAreaChange(i)">
+          {{area.name}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--旅行一覧-->
+<div>
+  <table
+    class="table table-borderd"
+    *ngIf="!isMobile">
+    <tr
+      *ngFor="let data of selectedData; let i = index">
+      <td class="td_id">{{i+1}}<br>
+        <span
+          class="glphicon glphicon-bookmark"
+          (click)="onBookmarkClick(data.id, i)"
+          [class.marked]="isMarked(data.id)">
+        </span>
+      </td>
+      <td class="td_country">
+        {{data.dest?.country?.name}}
+      </td>
+      <td class="td_photo">
+        <img
+          [src]="data.img[0]?.s"
+          *ngIf="data.img[0]">
+      </td>
+      <td class="td_price">
+        <span class="priceFont">
+          {{data.price?.min | number}}
+        </span>円〜
+      </td>
+
+      <td class="td_link">
+        <button
+          (click)="onDetailClick(i)"
+          class="btn btn-sm btn-primary">
+          詳細
+        </button>
+      </td>
+
+    </tr>
+  </table>
+</div>

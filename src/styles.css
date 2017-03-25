@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #dae3f3;
+}
+
+body {
+  padding-top: 50px;
+  background-color: #dae3f3;
+  font-family: sans-serif;
+}

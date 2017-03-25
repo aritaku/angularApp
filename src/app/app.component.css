@@ -1,0 +1,135 @@
+#myHeaderBar {
+  background-color: steelblue;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  max-width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 10;
+}
+
+#areaButton {
+  height: 35px;
+  width: 100px;
+  position: absolute;
+  top: 7px;
+  left: 0;
+}
+
+img.abloadCredit {
+  height: 35px;
+  width: 88px;
+  position: absolute;
+  top: 7px;
+  left: 120;
+}
+
+.myTitle {
+  position: absolute;
+  left: 210px;
+  font-size: 20px;
+}
+
+table#mySelectTable {
+  table-layout: fixed;
+  background-color: steelblue;
+  width: 8em;
+  position: fixed;
+  top: 50px;
+  margin-left: 0;
+  margin-right: auto;
+  z-index: 10;
+}
+
+#mySelectTable td:hover {
+  background-color: silver;
+  color: red;
+}
+
+#mySelectTable td{
+  font-size: 1.5em;
+  width: 8em;
+  color: white;
+  font-weight: bold;
+  background-color: steelblue;
+}
+
+.gliphicon {
+  color: darkgray;
+  z-index: 0;
+}
+
+.marked {
+  color: red;
+}
+
+.priceFont {
+  font-family: Verdana;
+  font-weight: bold;
+  color: red;
+}
+
+table {
+  width: 100%;
+  border-width: 1px;
+  border-color: black;
+  background-color: white;
+}
+
+tr{
+  height: 90%;
+  background-color: white;
+}
+
+table tr:nth-child(odd) {
+  background-color: cornsilk;
+}
+
+td {
+  padding: 0.3em;
+  font-weight: bold;
+  font-size: 1.5em;
+  font-family: sans-serif;
+}
+
+.td_id {
+  width: 3em;
+  text-align: center;
+}
+
+.td_country {
+  width: 6em;
+  text-align: center;
+}
+
+.td_photo {
+  width: 120px;
+  text-align: center;
+}
+
+.td_price {
+  width: 8em;
+  font-size: 1.2em;
+  text-align: left;
+  font-size: 1.1em;
+}
+
+.td_link {
+  width: 3em;
+  text-align: center;
+}
+
+button {
+  margin: 0 1em 0 1em;
+  font-weight: bold;
+}
+
+img {
+  height: 80px;
+}

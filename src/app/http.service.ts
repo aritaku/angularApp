@@ -41,7 +41,7 @@ export class HttpService {
       .map((response) => {
         let tourData;
         let obj = response.json();
-        if (obj.result.error) {
+        if (obj.results.error) {
           let err = obj.results.error[0];
           tourData = {
             error: err.code,
