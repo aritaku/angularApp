@@ -6,7 +6,7 @@ import "rxjs/add/operator/map";
 @Injectable()
 export class HttpService {
   WEB_API_URL: string = "https://webservice.recruit.co.jp/ab-road/tour/v1/";
-  API_KEY = "3f42f557fc942323";
+  API_KEY = "";
   DEFAULT_SIZE = "30";
   SORT_RANKING = "5";
   CALLBACK = "JSONP_CALLBACK"
